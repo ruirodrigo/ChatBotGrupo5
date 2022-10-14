@@ -1,0 +1,116 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - buscar_passagens_intent
+  - informar_origem_intent
+  - informar_destino_intent
+  - informar_data_embarque_intent 
+  - informar_data_retorno_intent
+  - informar_classe_intent
+  - informar_itinerario_intent
+  
+entities: 
+  - origem
+  - destino
+  - data_embarque
+  - data_retorno
+  - classe
+  - itinerario
+
+slots:
+   origem:
+      type: text
+      mappings:
+      - type: from_entity
+        entity: origem
+   destino:
+      type: text
+      mappings:
+      - type: from_entity
+        entity: destino
+   classe:
+      type: text
+      mappings:
+      - type: from_entity
+        entity: classe
+   itinerario:
+      type: text
+      mappings:
+      - type: from_entity
+        entity: itinerario
+   data_embarque:
+      type: text
+      mappings:
+      - type: from_entity
+        entity: data_embarque
+   data_retorno:
+      type: text
+      mappings:
+      - type: from_entity
+        entity: data_retorno
+
+actions: 
+  - buscar_passagem
+  - utter_perguntar_origem
+  - utter_perguntar_destino
+  - utter_perguntar_itinerario
+  - utter_perguntar_classe
+  - utter_perguntar_data_embarque
+  - utter_perguntar_data_retorno
+    
+responses:
+  utter_greet:
+  - text: "Olá! Como você está?"
+  - text: "Olá, tudo bem?"
+  - text: "Ei! Como você está?"
+  - text: "Olá, você está bem?"
+
+  utter_cheer_up:
+  - text: "Aqui está algo para animá-lo:"
+    image: "https://demo.sirv.com/nuphar.jpg?w=200&h=200"
+
+  utter_did_that_help:
+  - text: "Isso te ajudou?"
+
+  utter_happy:
+  - text: "Ótimo, vamos em frente!"
+  - text: "Que bom!"
+
+  utter_goodbye:
+  - text: "Tchau!"
+  - text: "Até Mais!"
+
+  utter_iamabot:
+  - text: "Eu sou um Bot criado pelo G5 - ElisaRuWilson."
+
+  utter_perguntar_classe: 
+  - text: "Você tem preferencia pela classe do voo (ECO/BUS/PEC/PST)?"
+
+  utter_perguntar_data_embarque: 
+  - text: "Qual a data pretendida para embarque (yyyy-mm-dd)?"
+
+  utter_perguntar_data_retorno: 
+  - text: "Retornará quando (yyyy-mm-dd)?"
+
+  utter_perguntar_destino: 
+  - text: "O destino que deseja ir?"
+
+  utter_perguntar_itinerario: 
+  - text: "Será passagem somente de ida (ONE_WAY/ROUND_TRIP)?"
+
+  utter_perguntar_origem: 
+  - text: "Qual seria o local de embarque de sua viagem?"
+
+  utter_perguntar_viagem: 
+  - text: "Vamos programar uma viagem?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

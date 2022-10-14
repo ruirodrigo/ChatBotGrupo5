@@ -1,0 +1,113 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - oi
+    - olá
+    - ei
+    - bom dia
+    - boa tarde
+    - boa noite
+
+- intent: goodbye
+  examples: |
+    - tchau
+    - até
+    - até mais
+    - até breve
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - sim
+    - indeed
+    - é claro
+    - perfeito
+    - correto
+
+- intent: mood_great
+  examples: |
+    - perfeito
+    - muito bom
+    - excelente
+    - incrível
+    - maravilhoso
+    - estou me sentindo muito bem
+    - estou ótimo
+    - estou bem
+
+- intent: mood_unhappy
+  examples: |
+    - triste
+    - muito triste
+    - infeliz
+    - mau
+    - muito mau
+    - horrível
+    - terrivel
+    - não muito bem
+    - extremamente triste
+    - tão triste
+
+- intent: bot_challenge
+  examples: |
+    - você é um bot?
+    - você é um humano?
+    - estou falando com um bot?
+    - estou falando com um human?
+
+- intent: buscar_passagens_intent
+  examples: |
+    - buscar passagens
+    - viajar
+    - quero viajar
+    - sugestões de viagem
+    - passagens de avião
+    - passagens
+    - avião
+    - viajar de avião
+    - comprar passagem
+    - preço de passagem
+  
+  - intent: informar_origem
+  examples: |
+    - [RIO](origem)
+    - Moro no [RIO](origem)
+    - Estou no [RIO](origem)
+  
+    - intent: informar_destino
+  examples: |
+    - [SAO](destino)
+    - Quero ir para [SAO](destino)
+    - Destino [SAO](destino)
+
+    - intent: informar_data_embarque
+  examples: |
+    - [yyyy-mm-dd](data_embarque)
+    - aaaa-mm-dd [2022-12-31](data_embarque)
+
+    - intent: informar_data_retorno
+  examples: |
+    - [yyyy-mm-dd](data_retorno)
+    - aaaa-mm-dd [2022-12-31](data_retorno)
+
+    - intent: informar_itinerario
+  examples: |
+    - [ONE_WAY](itinerario)
+    - ONE_WAY [ONE_WAY](itinerario)
+    - [ROUND_TRIP](itinerario)
+    - ROUND_TRIP [ROUND_TRIP](itinerario)
+    
+    - intent: informar_classe
+  examples: |
+    - [BUS](classe)
+    - Informar a classe da poltrona [BUS](classe)

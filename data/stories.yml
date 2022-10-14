@@ -1,0 +1,80 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: buscar passagens
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: buscar_passagens_intent
+  
+  - action: utter_perguntar_origem
+  - intent: informar_origem
+    entities:
+      - origem: RIO
+  - slot_was_set:
+      - origem: RIO
+
+  - action: utter_perguntar_destino
+  - intent: informar_destino
+    entities:
+      - destino: SAO
+  - slot_was_set:
+      - destino: SAO
+
+  - action: utter_perguntar_data_embarque
+  - intent: informar_data_embarque
+    entities:
+      - data_embarque: yyyy-mm-dd
+  - slot_was_set:
+      - data_embarque: yyyy-mm-dd
+
+  - action: utter_perguntar_data_retorno
+  - intent: informar_data_retorno
+    entities:
+      - data_retorno: yyyy-mm-dd
+  - slot_was_set:
+      - data_retorno: yyyy-mm-dd
+      
+  - action: utter_perguntar_classe
+  - intent: informar_classe
+    entities:
+      - classe: BUS
+  - slot_was_set:
+      - clase: BUS
+
+  - action: utter_perguntar_itinerario
+  - intent: informar_itinerario
+    entities:
+      - itinerario: ROUND_TRIP
+  - slot_was_set:
+      - itinerario: ROUND_TRIP
+      
+  - action: buscar_passagem
